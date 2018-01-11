@@ -2,7 +2,7 @@ const express = require("express")
 const http = require("http")
 const path = require("path")
 
-const PORT = process.env["HTTP_PORT"] || 8001
+const PORT = process.env["HTTP_PORT"] || 8002
 
 const app = express()
 

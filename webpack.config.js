@@ -12,7 +12,7 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         contentBase: "./public",
-        port: 8001,
+        port: 8002,
         host: "0.0.0.0",
         historyApiFallback: true
     },
