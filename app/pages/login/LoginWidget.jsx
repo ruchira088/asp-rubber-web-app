@@ -1,12 +1,8 @@
 import React from "react"
-import InputSection from "components/InputSection"
+import { RaisedButton, TextField, Card } from "material-ui"
 import { login } from "services/authentication"
 
-const LoginButton = ({ onClick }) => (
-    <div className="login-button">
-        <button onClick={onClick}>Login</button>
-    </div>
-)
+import "styles/login-widget.scss"
 
 export default class Login extends React.Component
 {
@@ -19,7 +15,7 @@ export default class Login extends React.Component
         }
     }
 
-    updateField = fieldName => value => this.setState({ [fieldName]: value })
+    updateField = fieldName => ({ target }) => this.setState({ [fieldName]: target.value })
 
     onLoginButtonClick = event => {
         const { username, password } = this.state
@@ -33,22 +29,30 @@ export default class Login extends React.Component
         const { username, password } = this.state
 
         return (
-            <div className="login">
+            <Card className="login-widget">
                 <form>
-                    <InputSection
-                        label="Username"
-                        autoComplete="username"
-                        value={username}
-                        onTextChange={this.updateField("username")}/>
-                    <InputSection
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-                        value={password}
-                        onTextChange={this.updateField("password")}/>
-                    <LoginButton onClick={this.onLoginButtonClick}/>
+                    <div className="username-field">
+                        <TextField
+                            onChange={this.updateField("username")}
+                            value={username}
+                            hintText="Username Field"
+                            floatingLabelText="Username"
+                        />
+                    </div>
+                    <div className="password-field">
+                        <TextField
+                            onChange={this.updateField("password")}
+                            value={password}
+                            hintText="Password Field"
+                            floatingLabelText="Password"
+                            type="password"
+                        />
+                    </div>
+                    <div className="login-button">
+                        <RaisedButton label="Login" primary={true} onClick={this.onLoginButtonClick}/>
+                    </div>
                 </form>
-            </div>
+            </Card>
         )
     }
 }
