@@ -1,6 +1,5 @@
 import React from "react"
 import InputSection from "components/InputSection"
-import * as storage from "storage/localStorage"
 import { login } from "services/authentication"
 
 const LoginButton = ({ onClick }) => (
@@ -8,8 +7,6 @@ const LoginButton = ({ onClick }) => (
         <button onClick={onClick}>Login</button>
     </div>
 )
-
-export const STORAGE_KEY = "session"
 
 export default class Login extends React.Component
 {
@@ -25,11 +22,11 @@ export default class Login extends React.Component
     updateField = fieldName => value => this.setState({ [fieldName]: value })
 
     onLoginButtonClick = event => {
-        event.preventDefault()
         const { username, password } = this.state
 
+        event.preventDefault()
+
         login(username, password)
-            .then(session => storage.set(STORAGE_KEY, session))
     }
 
     render() {

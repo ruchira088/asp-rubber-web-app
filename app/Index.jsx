@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Login from "pages/login/Login"
+import AppRouter from "pages/AppRouter"
 
-ReactDOM.render(<Login/>, document.getElementById("web-app"))
+ReactDOM.render(<AppRouter/>, document.getElementById("web-app"))
