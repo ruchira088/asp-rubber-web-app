@@ -42,7 +42,9 @@ module.exports = {
             utils: fromAppPath("utils"),
             styles: fromAppPath("styles"),
             assets: fromAppPath("assets"),
-            pages: fromAppPath("pages")
+            pages: fromAppPath("pages"),
+            routes: fromAppPath("routes"),
+            hoc: fromAppPath("hoc")
         }
     }
 }

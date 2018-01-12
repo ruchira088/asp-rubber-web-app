@@ -2,7 +2,7 @@ import React from "react"
 import { RaisedButton, TextField, Card } from "material-ui"
 import { login } from "services/authentication"
 
-import "styles/login-widget.scss"
+import "styles/login-form.scss"
 
 export default class Login extends React.Component
 {
@@ -29,7 +29,7 @@ export default class Login extends React.Component
         const { username, password } = this.state
 
         return (
-            <Card className="login-widget">
+            <Card className="login-form">
                 <form>
                     <div className="username-field">
                         <TextField
