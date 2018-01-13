@@ -43,8 +43,7 @@ module.exports = {
             styles: fromAppPath("styles"),
             assets: fromAppPath("assets"),
             pages: fromAppPath("pages"),
-            routes: fromAppPath("routes"),
-            hoc: fromAppPath("hoc")
+            routes: fromAppPath("routes")
         }
     }
 }
