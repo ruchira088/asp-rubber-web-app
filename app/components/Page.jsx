@@ -10,7 +10,7 @@ class Page extends React.Component
     }
 
     componentDidMount() {
-        const { onAuthUser = stubFunction, onUnauthUser = stubFunction, history } = this.props
+        const { onAuthUser = stubFunction, onUnauthUser = stubFunction, history, location } = this.props
 
         getAuthenticatedUser()
             .then(authUser => onAuthUser(history, authUser))

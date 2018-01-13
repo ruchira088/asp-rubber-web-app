@@ -1,9 +1,7 @@
 import React from "react"
-import { Route } from "react-router-dom"
-import Customer from "routes/Customer"
 
-export default ({ match }) => (
+export default () => (
     <div>
-        <Route path={`${match.url}/customer`} component={Customer}/>
+        Home
     </div>
 )

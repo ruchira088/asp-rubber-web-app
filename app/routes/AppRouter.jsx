@@ -1,9 +1,10 @@
 import React from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import { MuiThemeProvider as ThemeProvider } from "material-ui"
-import { AuthenticatedRoutes, UnauthenticatedRoutes } from "routes/RouteTypes"
+import Route, { AuthenticatedRoutes, UnauthenticatedRoutes } from "routes/RouteTypes"
 import LoginForm from "pages/login/LoginForm"
 import Customer from "routes/Customer"
+import Home from "routes/Home"
 
 export default () => (
     <BrowserRouter>
@@ -13,6 +14,7 @@ export default () => (
                     <Route path="/login" component={LoginForm}/>
                 </UnauthenticatedRoutes>
                 <AuthenticatedRoutes>
+                    <Route path="/home" component={Home}/>
                     <Route path="/customer" component={Customer}/>
                 </AuthenticatedRoutes>
             </div>
