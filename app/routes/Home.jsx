@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import Customer from "routes/Customer"
-import Authenticated from "hoc/Authenticated"
+import AuthenticatedHOC from "hoc/AuthenticatedHOC"
 
 const Home = ({ match }) => (
     <div>
@@ -9,4 +9,4 @@ const Home = ({ match }) => (
     </div>
 )
 
-export default Authenticated(Home)
+export default AuthenticatedHOC(Home)
