@@ -19,10 +19,12 @@ export default class Login extends React.Component
 
     onLoginButtonClick = event => {
         const { username, password } = this.state
+        const { history } = this.props
 
         event.preventDefault()
 
         login(username, password)
+            .then(() => history.push("/home"))
     }
 
     render() {
