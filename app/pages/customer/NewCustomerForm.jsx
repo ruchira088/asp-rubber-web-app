@@ -1,6 +1,9 @@
 import React from "react"
-import { Card, TextField } from "material-ui"
+import { Card, TextField, RaisedButton } from "material-ui"
 import AddressAutoComplete from "components/AddressAutoComplete"
+import { camelCase } from "utils/generalUtils"
+
+import "styles/new-customer-form.scss"
 
 export default class NewCustomerForm extends React.Component
 {
@@ -21,24 +24,28 @@ export default class NewCustomerForm extends React.Component
     setAddress = address => this.setState({ address })
 
 
-    textField = (label, fieldName, {...props} = {}) =>
+    textField = (label, props = {}) =>
         <div className="input-text-field">
             <TextField
                 floatingLabelText={label}
-                value={this.state[fieldName]}
-                onChange={this.onTextChange(fieldName)}
+                value={this.state[camelCase(label)]}
+                onChange={this.onTextChange(camelCase(label))}
+                fullWidth={true}
                 {...props}
             />
         </div>
 
     render() {
+        const { onSave = console.log } = this.props
+
         return (
             <Card className="new-customer-form">
-                { this.textField("Contact Name", "contactName") }
-                { this.textField("Business Name", "businessName") }
-                { this.textField("Telephone Number", "telephoneNumber") }
-                { this.textField("Email", "email") }
+                { this.textField("Contact Name") }
+                { this.textField("Business Name") }
+                { this.textField("Telephone Number") }
+                { this.textField("Email") }
                 <AddressAutoComplete onSelect={this.setAddress}/>
+                <RaisedButton label="Save" primary={true} onClick={() => onSave(this.state)}/>
             </Card>
         )
     }

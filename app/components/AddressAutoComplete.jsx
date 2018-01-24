@@ -32,6 +32,7 @@ export default class AddressAutoComplete extends React.Component
                 floatingLabelText="Address"
                 onUpdateInput={this.handleInputChanged}
                 onNewRequest={onSelect}
+                fullWidth={true}
             />
         )
     }
