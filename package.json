@@ -12,13 +12,13 @@
     "start:server": "node ."
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.28.0",
     "classnames": "^2.2.5",
-    "express": "^4.16.2",
+    "express": "^4.19.2",
     "material-ui": "^0.20.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.2.1",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
@@ -30,10 +30,10 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.6",
-    "node-sass": "^4.7.2",
+    "node-sass": "^9.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^3.1.11"
   }
 }
